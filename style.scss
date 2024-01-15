@@ -1,0 +1,152 @@
+// @Use all scss files in scss folder
+@use "./SCSS/Layout/global" as *;
+@use "./SCSS/Layout/footer" as *;
+@use "./SCSS/Helpers/mixins" as *;
+@use "./SCSS/Helpers/variables" as *;
+
+.card {
+    width: 82.5%;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 718px;
+    max-width: 635px;
+    box-shadow: 0 20px 25px -5px $Grayish-Blue-Shade,
+        0 10px 10px -5px $Grayish-Blue-Shade;
+    @include grid(1fr, 37fr 31.5fr 31.1fr);
+    grid-template-areas:
+        "joinBox"
+        "subscription"
+        "whyUs";
+    @include breakpoints(medium) {
+        max-height: 475px;
+        @include grid(repeat(2, 1fr), 1fr 1.19281045752fr);
+        grid-template-areas:
+            "joinBox joinBox"
+            "subscription whyUs";
+    }
+    @include breakpoints(large) {
+        max-height: 475px;
+        @include grid(repeat(2, 1fr), 1fr 1.19281045752fr);
+        grid-template-areas:
+            "joinBox joinBox"
+            "subscription whyUs";
+    }
+    .joinBox {
+        @include cardDiv;
+        grid-area: joinBox;
+        background-color: white;
+        h1 {
+            @include heading(20px);
+            color: $Cyan;
+            @include breakpoints(small) {
+                @include heading(23.5px);
+            }
+            @include breakpoints(medium) {
+                @include heading(23.5px);
+            }
+            @include breakpoints(large) {
+                @include heading(23.5px);
+            }
+        }
+        .greenP {
+            color: $Bright-Yellow;
+            font-weight: $bold-weight;
+            font-size: 15px;
+            @include breakpoints(small) {
+                font-size: 17.5px;
+                margin-bottom: 10px;
+            }
+            @include breakpoints(medium) {
+                font-size: 17.5px;
+                margin-bottom: 10px;
+            }
+            @include breakpoints(large) {
+                font-size: 17.5px;
+                margin-bottom: 10px;
+            }
+        }
+        .thirdP {
+            color: $Grayish-Blue;
+            line-height: 2;
+            margin: 5px 0;
+            font-size: 13px;
+            @include breakpoints(small) {
+                font-size: 15.5px;
+                margin: 0;
+                line-height: 1.75;
+            }
+            @include breakpoints(medium) {
+                font-size: 15.5px;
+                margin: 0;
+                line-height: 1.75;
+            }
+            @include breakpoints(large) {
+                font-size: 15.5px;
+                margin: 0;
+                line-height: 1.75;
+            }
+        }
+    }
+    .subscription {
+        @include cardDiv;
+        grid-area: subscription;
+        background-color: $Cyan;
+        color: white;
+        font-weight: $bold-weight;
+        h2 {
+            @include heading(18px);
+        }
+        .priceP {
+            @include paragraph($Light-Gray);
+            @include flex(row, space-between, center);
+            gap: 10px;
+            margin-bottom: 5px;
+            .price {
+                @include heading(32px);
+                margin: 0;
+                opacity: 100%;
+            }
+            .perMonth {
+                opacity: 0.5;
+            }
+        }
+        .description {
+            @include paragraph($Light-Gray);
+            margin-top: 0;
+        }
+        button {
+            font-family: "Karla", sans-serif;
+            font-size: 16px;
+            background-color: $Bright-Yellow;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: $bold-weight;
+            padding: 10px 20px;
+            width: 100%;
+            height: 47.5px;
+            margin-top: auto;
+            cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            &:hover {
+                opacity: 0.8;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+    .whyUs {
+        @include cardDiv;
+        grid-area: whyUs;
+        background-color: $Cyan2;
+        color: white;
+        h2 {
+            @include heading(18px);
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 0;
+            opacity: 0.6;
+        }
+    }
+}

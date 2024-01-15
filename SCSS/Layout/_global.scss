@@ -1,0 +1,18 @@
+@use "../Helpers/mixins" as *;
+@use "../Helpers/variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    background-color: $Light-Gray;
+    @include flex(row, center, center);
+}

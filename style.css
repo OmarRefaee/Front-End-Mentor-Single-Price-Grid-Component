@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/*
+- Cyan: hsl(179, 62%, 43%)
+- Bright Yellow: hsl(71, 73%, 54%)
+- Light Gray: hsl(204, 43%, 93%)
+- Grayish Blue: hsl(218, 22%, 67%)
+*/
+* {
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background-color: hsl(204, 43%, 93%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: grey;
+  font-weight: bold;
+  width: 100%;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  text-decoration: none;
+  color: rgb(50, 50, 50);
+}
+
+.card {
+  width: 82.5%;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 718px;
+  max-width: 635px;
+  box-shadow: 0 20px 25px -5px hsla(218, 22%, 67%, 0.25), 0 10px 10px -5px hsla(218, 22%, 67%, 0.25);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 37fr 31.5fr 31.1fr;
+  grid-template-areas: "joinBox" "subscription" "whyUs";
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card {
+    max-height: 475px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1.1928104575fr;
+    grid-template-areas: "joinBox joinBox" "subscription whyUs";
+  }
+}
+@media (min-width: 1200px) {
+  .card {
+    max-height: 475px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1.1928104575fr;
+    grid-template-areas: "joinBox joinBox" "subscription whyUs";
+  }
+}
+.card .joinBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 25px;
+  grid-area: joinBox;
+  background-color: white;
+}
+@media (min-width: 0px) and (max-width: 292px) {
+  .card .joinBox {
+    padding: 16px 25px;
+  }
+}
+@media (min-width: 292px) and (max-width: 340px) {
+  .card .joinBox {
+    padding: 20px 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card .joinBox {
+    padding: 40px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card .joinBox {
+    padding: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .card .joinBox {
+    padding: 40px;
+  }
+}
+.card .joinBox h1 {
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  color: hsl(179, 62%, 43%);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card .joinBox h1 {
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    font-size: 23.5px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card .joinBox h1 {
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    font-size: 23.5px;
+  }
+}
+@media (min-width: 1200px) {
+  .card .joinBox h1 {
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    font-size: 23.5px;
+  }
+}
+.card .joinBox .greenP {
+  color: hsl(71, 73%, 54%);
+  font-weight: 700;
+  font-size: 15px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card .joinBox .greenP {
+    font-size: 17.5px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card .joinBox .greenP {
+    font-size: 17.5px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .card .joinBox .greenP {
+    font-size: 17.5px;
+    margin-bottom: 10px;
+  }
+}
+.card .joinBox .thirdP {
+  color: hsl(218, 22%, 67%);
+  line-height: 2;
+  margin: 5px 0;
+  font-size: 13px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card .joinBox .thirdP {
+    font-size: 15.5px;
+    margin: 0;
+    line-height: 1.75;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card .joinBox .thirdP {
+    font-size: 15.5px;
+    margin: 0;
+    line-height: 1.75;
+  }
+}
+@media (min-width: 1200px) {
+  .card .joinBox .thirdP {
+    font-size: 15.5px;
+    margin: 0;
+    line-height: 1.75;
+  }
+}
+.card .subscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 25px;
+  grid-area: subscription;
+  background-color: hsl(179, 62%, 43%);
+  color: white;
+  font-weight: 700;
+}
+@media (min-width: 0px) and (max-width: 292px) {
+  .card .subscription {
+    padding: 16px 25px;
+  }
+}
+@media (min-width: 292px) and (max-width: 340px) {
+  .card .subscription {
+    padding: 20px 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card .subscription {
+    padding: 40px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card .subscription {
+    padding: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .card .subscription {
+    padding: 40px;
+  }
+}
+.card .subscription h2 {
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+.card .subscription .priceP {
+  color: hsl(204, 43%, 93%);
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.card .subscription .priceP .price {
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  font-size: 32px;
+  margin: 0;
+  opacity: 100%;
+}
+.card .subscription .priceP .perMonth {
+  opacity: 0.5;
+}
+.card .subscription .description {
+  color: hsl(204, 43%, 93%);
+  font-weight: 400;
+  margin-top: 0;
+}
+.card .subscription button {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background-color: hsl(71, 73%, 54%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  width: 100%;
+  height: 47.5px;
+  margin-top: auto;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.card .subscription button:hover {
+  opacity: 0.8;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.card .whyUs {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 25px;
+  grid-area: whyUs;
+  background-color: hsl(179, 47.5%, 52.5%);
+  color: white;
+}
+@media (min-width: 0px) and (max-width: 292px) {
+  .card .whyUs {
+    padding: 16px 25px;
+  }
+}
+@media (min-width: 292px) and (max-width: 340px) {
+  .card .whyUs {
+    padding: 20px 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card .whyUs {
+    padding: 40px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card .whyUs {
+    padding: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .card .whyUs {
+    padding: 40px;
+  }
+}
+.card .whyUs h2 {
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+.card .whyUs p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  opacity: 0.6;
+}/*# sourceMappingURL=style.css.map */

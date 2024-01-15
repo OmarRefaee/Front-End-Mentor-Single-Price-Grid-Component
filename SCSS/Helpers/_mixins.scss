@@ -1,0 +1,76 @@
+@use "../Helpers/variables" as *;
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin cardDiv {
+    @include flex(column, left, flex-start);
+    padding: 25px;
+    @include breakpoints(292px) {
+        padding: 16px 25px;
+    }
+    @include breakpoints(340px) {
+        padding: 20px 25px;
+    }
+    @include breakpoints(small) {
+        padding: 40px;
+    }
+    @include breakpoints(medium) {
+        padding: 40px;
+    }
+    @include breakpoints(large) {
+        padding: 40px;
+    }
+}
+
+// grid mixin
+@mixin grid($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+@mixin heading($font-size) {
+    font-weight: $bold-weight;
+    margin: 0 0 5px 0;
+    font-size: $font-size;
+}
+
+@mixin paragraph($color) {
+    color: $color;
+    font-weight: 400;
+}
+
+@mixin breakpoints($point) {
+    @if $point == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == small {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    } @else if $point == medium {
+        @media (min-width: 992px) and (max-width: 1200px) {
+            @content;
+        }
+    } @else if $point == large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $point == 340px {
+        @media (min-width: 292px) and (max-width: $point) {
+            @content;
+        }
+    } @else if $point == 292px {
+        @media (min-width: 0px) and (max-width: $point) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint mixin supports: mobile, small, medium, large, 292px and 340px";
+    }
+}
